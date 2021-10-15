@@ -16,8 +16,9 @@ actual_result = driver.find_element(By.XPATH, "//span[@class='a-color-state a-te
 
 expected_result = '"coffee maker"'
 
-### To compare that the actual and expected are identical. If not the same it will provide an error message.
-### f stands for format - it's an f string in python - allows you to put variables in the string.
+# To compare that the actual and expected are identical. If not the same it will provide an error message.
+# f stands for format - it's an f string in python - allows you to put variables in the string.
 assert actual_result == expected_result, f'Error Actual {actual_result} does not match expected {expected_result}'
 
+print("test passed")
 driver.quit()
