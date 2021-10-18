@@ -33,3 +33,15 @@ def verify_can_click_through_colors(context):
     #     print(f'{actual_colors}')
     #
     # assert expected_colors == actual_colors, f'Error: expected {expected_colors} did not match {actual_colors}'
+
+@then('Verify user can click through degenerate colors')
+def verify_can_click_through_colors(context):
+    expected_colors = ['Black', 'Navy', 'Asphalt', 'Royal Blue', 'Dark Heather', 'Heather Blue']
+
+    colors = context.driver.find_elements(*COLOR_OPTIONS)
+
+    for i in range(len(colors)):
+        colors[i].click()
+        current_color = context.driver.find_element(*CURRENT_COLOR).text
+        assert current_color == expected_colors[i], f'Error: expected {expected_colors[i]} did not match {current_color}'
+
