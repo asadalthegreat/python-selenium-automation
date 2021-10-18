@@ -21,3 +21,11 @@ def verify_cancel_order_text(context):
     actual_result = context.driver.find_element(By.XPATH, "//h1[text()='Cancel Items or Orders']").text
     expected_result = 'Cancel Items or Orders'
     assert actual_result == expected_result, f'Error: Actual result {actual_result} does not match expected {expected_result}'
+
+@then('Elements are visible on help page')
+def verify_elements_are_visible_individually(context):
+    context.driver.find_element(By.CSS_SELECTOR, '.a-section.a-spacing-extra-large.a-spacing-top-extra-large.ss-landing-container')
+    context.driver.find_element(By.CSS_SELECTOR, '.a-section.a-spacing-large.ss-landing-container-wide')
+    context.driver.find_element(By.ID, 'helpsearch')
+    context.driver.find_element(By.CSS_SELECTOR, '.a-span12.a-column.a-spacing-top-small')
+    context.driver.find_element(By.ID, 'csg-support-topics')
