@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 
 HAM_MENU_ICON = (By.ID, 'nav-hamburger-menu')
@@ -28,6 +29,23 @@ def click_sign_in_popup(context):
         EC.element_to_be_clickable((SIGN_IN_POPUP_BTN)), message ='Error: Sign in button not clickable'
     ).click()
 
+
+@when('Sign In popup appears')
+def sign_in_appears(context):
+    context.driver.wait.until(
+        EC.element_to_be_clickable((SIGN_IN_POPUP_BTN)), message ='Error: Sign in button not clickable')
+
+
+@when('I wait for {sec} seconds')
+def wait_sec(context, sec):
+    sleep(int(sec))
+
+
+@then('I Verify Sign In popup disappears')
+def click_sign_in_popup(context):
+    context.driver.wait.until_not(EC.visibility_of_element_located((SIGN_IN_POPUP_BTN)),
+                                  message ='Error: Sign in button is visible')
+    assert context.driver.current_url == 'https://www.amazon.com/'
 
 @then ('Verify hamburger menu icon is present')
 def verify_ham_menu(context):

@@ -7,24 +7,23 @@
 
 ############ NO IDEA! I'm way off
 
-jeff = ['google', 'amazon']
-bezos = 0
+def unique_letter_optimal(string: str):
+    if not string:
+        raise ValueError
 
+    string = string.lower()
+    d = {}
 
-while bezos < 2:
-    i = 0
-    while i < 6:
-        stored_letter = jeff[bezos][i]
-        x = 1
-        i += 1
-        while x < 6:
-            stored_letter2 = jeff[bezos][x]
-            x = x+1
+    for l in string:
+        if l not in d:
+            d[l] = 1
+        else:
+            d[l] += 1
 
-            if stored_letter == stored_letter2:
-                print("Non unique letters are found " + stored_letter + " is the same as " + stored_letter2)
-                break
-    bezos += 1
+    for k, v in d.items():
+        if v == 1:
+            return k
 
+    return ""
 
-
+print(unique_letter_optimal("viojklejf08j0fmvioewjf sjfkasldjfasl;kd jfasdofjsaidfjpas i"))

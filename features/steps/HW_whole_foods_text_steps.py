@@ -1,22 +1,23 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 
+PRODUCTS = (By.CSS_SELECTOR, '.wfm-sales-item-card__regular-price')
+PRODUCT_NAME =(By.CSS_SELECTOR, '.wfm-sales-item-card__product-name')
+
 
 @given('I Open Amazon Whole Foods page')
 def open_product(context):
     context.driver.get('https://www.amazon.com/wholefoodsdeals')
 
 
-@then('I verify {expected_number} items have \'Regular\' text')
-def verify_regular_text(context, expected_number):
-    reg_text = context.driver.find_elements(By.CSS_SELECTOR, '.wfm-sales-item-card__regular-price')
-    actual_number = len(reg_text)
-    assert expected_number == actual_number, f'error: expected {expected_number}, but got {actual_number}'
+@then('I verify that every product has text Regular and product name')
+def verify_regular_text(context):
+    product_elements = context.driver.find_elements(*PRODUCTS)
 
+    for product_element in product_elements:
+        print(product_element.text)
+        assert 'Regular' in product_element.text, f'Expected  Regular to be in element, but got {product_element}'
 
-@then('I verify {expected_number} items have a product name')
-def verify_product_has_name(context, expected_number):
-    product_names = context.driver.find_elements(By.CSS_SELECTOR, '.wfm-sales-item-card__product-name')
-    actual_number = len(product_names)
-    assert expected_number == actual_number, f'error: expected {expected_number}, but got {actual_number}'
-
+        product_name = product_element.find_element(*PRODUCT_NAME).text
+        print(product_name)
+        assert product_name, 'Expected non-empty product name'
