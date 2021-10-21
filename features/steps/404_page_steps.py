@@ -1,6 +1,8 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
+
 
 
 DOG_IMG = (By.CSS_SELECTOR, "img[alt='Dogs of Amazon']")
@@ -8,7 +10,7 @@ DOG_IMG = (By.CSS_SELECTOR, "img[alt='Dogs of Amazon']")
 @given ('Store original window')
 def store_current_window(context):
     context.original_window = context.driver.current_window_handle
-    print('Current window handle: {context.original_window}')
+    print(f'Current window handle: {context.original_window}')
 
 
 @when ('Click on a dog image')

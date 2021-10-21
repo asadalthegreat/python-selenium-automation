@@ -70,3 +70,7 @@ def verify_footer_links(context, expected_amount):
     print(links)
     assert len(links) == int(expected_amount), f'Expected {expected_amount} links, but got {len(links)}'
 
+@when('I click on the Best Sellers link')
+def click_on_best_sellers(context):
+    context.driver.find_element(By.CSS_SELECTOR, "a[href*='/gp/bestsellers/?ref_=nav_cs']").click()
+
