@@ -1,0 +1,67 @@
+body {
+    font-family: Athelas;
+    margin:0px;
+    background-image: url("IT_flag.jpeg");
+}
+
+h1 {
+    margin-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 140%;
+}
+
+h2 {
+    margin-top: 0px;
+    padding-top: 10px;
+    padding-bottom: 70px;
+    font-size: 100%;
+}
+
+.header {
+    border: 0px;
+    text-align: center;
+    color: white;
+    font-family: verdana;
+
+}
+
+.table {
+    /*margin-right: 500px;*/
+    padding-right: 450px;
+    border-color: black;
+}
+
+.color1 {
+	background: #634258;
+}
+
+.color2 {
+	background: #9ad1aa;
+}
+
+.color3 {
+    background: #60a0b0;
+}
+
+.instructions {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.instructions_text {
+    font-family: Geneva;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.enjoy {
+    margin-top: 0px;
+    margin-bottom: 20px;
+    padding-left: 70px;
+    font-family: Noteworthy;
+    font-size: 400%;
+    text-align: center;
+    color: #323232;
+    text-transform: uppercase;
+}
