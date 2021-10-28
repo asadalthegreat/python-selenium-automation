@@ -12,13 +12,13 @@ Feature: Amazon Search
     When I click on amazon search icon
     Then I verify "table" text is shown
 
-### Scenario Outlines can't run and they cause flakiness for the whole feature file.
-#  Scenario Outline: User can search keywords on Amazon
-#    Given I Open Amazon page
-#    When Input <search_word> into amazon search
-#    When I click on amazon search icon
-#    Then I verify <result> text is shown
-#    |search_word   |result     |
-#    |table         |"table"    |
-#    |mug           |"mug"      |
+  Scenario Outline: User can search keywords on Amazon
+    Given I Open Amazon page
+    When Input <search_word> into amazon search
+    When I click on amazon search icon
+    Then I verify <result> text is shown
+    Examples:
+    |search_word   |result     |
+    |table         |"table"    |
+    |mug           |"mug"      |
 

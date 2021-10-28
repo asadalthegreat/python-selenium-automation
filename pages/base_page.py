@@ -1,10 +1,10 @@
 class Page:
-    def __int__(self, driver):
+    def __init__(self, driver):
         self.driver = driver
         self.base_url = 'https://www.amazon.com/'
 
     def find_elements(self, *locator):
-        return self.driver.find_element(*locator)
+        return self.driver.find_elements(*locator)
 
     def click(self, *locator): # (By.ID, 'value..')
         self.driver.find_element(*locator).click()

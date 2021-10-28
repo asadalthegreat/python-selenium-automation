@@ -14,7 +14,7 @@ def open_product(context, product_id):
 
 @then('Verify user can click through colors')
 def verify_can_click_through_colors(context):
-    expected_colors = ['Dark Navy', 'Black']
+    expected_colors = ['Dark Navy', 'Black', 'Dusty Rose']
 
     colors = context.driver.find_elements(*COLOR_OPTIONS)
 
