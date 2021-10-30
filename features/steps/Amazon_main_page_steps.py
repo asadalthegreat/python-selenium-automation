@@ -23,6 +23,16 @@ def click_amazon_search(context):
     context.app.header.click_search()
 
 
+@when('I Click Amazon Orders link')
+def click_amazon_orders(context):
+    context.app.header.click_orders()
+
+
+@when('I click on the Best Sellers link')
+def click_on_best_sellers(context):
+    context.driver.find_element(By.CSS_SELECTOR, "a[href*='/gp/bestsellers/?ref_=nav_cs']").click()
+
+
 @when('Click Sign In from popup')
 def click_sign_in_popup(context):
     context.driver.wait.until(
@@ -47,6 +57,7 @@ def click_sign_in_popup(context):
                                   message ='Error: Sign in button is visible')
     assert context.driver.current_url == 'https://www.amazon.com/'
 
+
 @then ('Verify hamburger menu icon is present')
 def verify_ham_menu(context):
     print('\nFIND ELEMENT:\n')
@@ -69,8 +80,3 @@ def verify_footer_links(context, expected_amount):
     links = context.driver.find_elements(*FOOTER_LINKS)
     print(links)
     assert len(links) == int(expected_amount), f'Expected {expected_amount} links, but got {len(links)}'
-
-@when('I click on the Best Sellers link')
-def click_on_best_sellers(context):
-    context.driver.find_element(By.CSS_SELECTOR, "a[href*='/gp/bestsellers/?ref_=nav_cs']").click()
-

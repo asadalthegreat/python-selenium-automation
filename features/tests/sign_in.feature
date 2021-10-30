@@ -10,3 +10,8 @@ Feature: Amazon Sign in tests
     When Sign In popup appears
     And I wait for 5 seconds
     Then I Verify Sign In popup disappears
+
+  Scenario: Logged out user sees Sign in page when clicking Orders
+    Given I Open Amazon page
+    When I Click Amazon Orders link
+    Then Verify Sign In page opens
