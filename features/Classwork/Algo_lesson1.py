@@ -2,18 +2,18 @@
 ## The task is to invert the variables so that the first variable contains the second number,
 ## While the first number is in the second variable
 
-# a = int(input('input value a:'))
-# b = int(input('input value b:'))
-#
-# print(f'First a = {a}, b = {b}')
-#
-# a = a + b
-# b = a - b
-# a = a - b
-#
-# print(f'After swap a = {a}, b = {b}')q
+a = int(input('input value a:'))
+b = int(input('input value b:'))
 
-## When a user enters a number, the factorial is displayed
+print(f'First a = {a}, b = {b}')
+
+a = a + b
+b = a - b
+a = a - b
+
+print(f'After swap a = {a}, b = {b}')q
+
+# When a user enters a number, the factorial is displayed
 
 
 
