@@ -50,6 +50,25 @@ def sign_in_appears(context):
 def wait_sec(context, sec):
     sleep(int(sec))
 
+@when('Hover over language options')
+def hover_over_language_options(context):
+    context.app.header.hover_over_language_options()
+
+
+@when('Select department by alias {alias}')
+def select_department(context, alias):
+    context.app.header.select_department_by_alias(alias)
+
+
+@then('Verify correct options present')
+def verify_lang_options_present(context):
+    context.app.header.verify_lang_options_present()
+
+
+@then('Verify {dept} department is selected')
+def verify_correct_department(context, dept):
+    context.app.search_results_page.verify_correct_department(dept)
+
 
 @then('I Verify Sign In popup disappears')
 def click_sign_in_popup(context):

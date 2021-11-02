@@ -7,6 +7,16 @@ PRODUCT_NAME = (By.ID, 'productTitle')
 COLOR_OPTIONS = (By.CSS_SELECTOR, '#variation_color_name li')
 CURRENT_COLOR = (By.CSS_SELECTOR, '#variation_color_name .selection')
 
+@when ('hover mouse over sign in')
+def hover_mouse(context):
+    context.app.product_page.hover_mouse()
+
+
+@then('Verify sign in component appears')
+def verify_sign_in_component(context):
+    context.app.product_page.verify_sign_in_component()
+
+
 @given('Open Amazon product {product_id} page')
 def open_product(context, product_id):
     context.driver.get(f'https://www.amazon.com/dp/{product_id}/')

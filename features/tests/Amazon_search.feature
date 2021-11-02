@@ -22,3 +22,21 @@ Feature: Amazon Search
     |table         |"table"    |
     |mug           |"mug"      |
 
+Scenario: User can see language options
+  Given I Open Amazon page
+  When Hover over language options
+  Then Verify correct options present
+
+  Scenario: User can select and search in a department
+    Given I Open Amazon page
+    When Select department by alias stripbooks
+    When Input Faust into amazon search
+    And I click on amazon search icon
+    Then Verify stripbooks department is selected
+
+  Scenario: User can select and search a department
+    Given I Open Amazon page
+    When Select department by alias computers
+    When Input macbook into amazon search
+    And I click on amazon search icon
+    Then Verify computers department is selected
