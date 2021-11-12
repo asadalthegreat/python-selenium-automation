@@ -4,21 +4,23 @@
 # divided by the number of elements.
 # Example: [1, 3, 5, 6, 4, 10, 2, 3] (The arithmetical mean is 4.25),
 # Return [1, 3, 4, 2, 3]
-#
-# def below_mean(list):
-#     mean = sum(list) / len(list)
-#     x = 0
-#     output = []
-#     for i in list:
-#         if list[x] < mean:
-#             output.append(list[x])
-#         x = x + 1
-#     return output
-#
-#
-# test = [1, 3, 5, 6, 4, 10, 2, 3]
-# output = below_mean(test)
-# print(output)
+
+
+# 0(n)
+def below_mean(list):
+    mean = sum(list) / len(list)
+    x = 0
+    output = []
+    for i in list:
+        if list[x] < mean:
+            output.append(list[x])
+        x = x + 1
+    return output
+
+
+test = [1, 3, 5, 6, 4, 10, 2, 3]
+output = below_mean(test)
+print(output)
 
 
 
@@ -28,6 +30,8 @@
 # They can be equal to each other or different.
 # Example: [198, 3, 4, 9, 10, 9, 2], Return: 2, 3
 
+
+# 0(logN)
 def two_lowest(list):
     x = 0
     lows = [list[0], list[1]]
